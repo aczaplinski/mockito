@@ -13,6 +13,7 @@ import org.mockito.stubbing.OngoingStubbing;
 import org.mockito.verification.VerificationMode;
 import org.mockito.verification.VerificationStrategy;
 
+@ObserverPattern.Subject
 public interface MockingProgress {
 
     void reportOngoingStubbing(OngoingStubbing<?> ongoingStubbing);

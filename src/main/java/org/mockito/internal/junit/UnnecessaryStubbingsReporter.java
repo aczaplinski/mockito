@@ -19,6 +19,7 @@ import org.mockito.mock.MockCreationSettings;
 /**
  * Reports unnecessary stubbings
  */
+@ObserverPattern.ConcreteObserver
 public class UnnecessaryStubbingsReporter implements MockCreationListener {
 
     private List<Object> mocks = new LinkedList<Object>();

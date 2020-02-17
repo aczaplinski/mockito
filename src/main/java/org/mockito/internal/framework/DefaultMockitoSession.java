@@ -16,6 +16,7 @@ import org.mockito.internal.junit.UniversalTestListener;
 import org.mockito.plugins.MockitoLogger;
 import org.mockito.quality.Strictness;
 
+@BuilderPattern.Product
 public class DefaultMockitoSession implements MockitoSession {
 
     private final String name;

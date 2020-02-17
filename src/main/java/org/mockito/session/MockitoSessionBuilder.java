@@ -17,6 +17,7 @@ import org.mockito.quality.Strictness;
  *
  * @since 2.7.0
  */
+@BuilderPattern.Builder
 @Incubating
 @NotExtensible
 public interface MockitoSessionBuilder {

@@ -7,6 +7,7 @@ package org.mockito.internal.session;
 import org.mockito.plugins.MockitoLogger;
 import org.mockito.session.MockitoSessionLogger;
 
+@AdapterPattern.Adapter
 class MockitoLoggerAdapter implements MockitoLogger {
 
     private final MockitoSessionLogger logger;
