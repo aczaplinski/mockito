@@ -4,6 +4,7 @@
  */
 package org.mockito;
 
+import org.jpatterns.gof.creational.BuilderPattern;
 import org.mockito.exceptions.misusing.PotentialStubbingProblem;
 import org.mockito.exceptions.misusing.UnfinishedMockingSessionException;
 import org.mockito.exceptions.misusing.UnnecessaryStubbingException;
@@ -13,8 +14,6 @@ import org.mockito.listeners.MockitoListener;
 import org.mockito.quality.MockitoHint;
 import org.mockito.quality.Strictness;
 import org.mockito.session.MockitoSessionBuilder;
-
-import org.jpatterns.gof.creational.BuilderPattern;
 
 /**
  * {@code MockitoSession} is an optional, highly recommended feature
