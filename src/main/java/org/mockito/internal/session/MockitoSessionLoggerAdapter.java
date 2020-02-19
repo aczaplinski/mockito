@@ -4,6 +4,7 @@
  */
 package org.mockito.internal.session;
 
+import org.jpatterns.gof.structural.AdapterPattern;
 import org.mockito.plugins.MockitoLogger;
 import org.mockito.session.MockitoSessionLogger;
 

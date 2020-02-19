@@ -4,6 +4,7 @@
  */
 package org.mockito.listeners;
 
+import org.jpatterns.gof.behavioral.ObserverPattern;
 import org.mockito.mock.MockCreationSettings;
 
 /**

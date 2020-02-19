@@ -6,6 +6,7 @@ package org.mockito.internal.framework;
 
 import java.util.List;
 
+import org.jpatterns.gof.creational.BuilderPattern;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.mockito.MockitoSession;

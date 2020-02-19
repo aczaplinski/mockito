@@ -14,6 +14,8 @@ import org.mockito.quality.MockitoHint;
 import org.mockito.quality.Strictness;
 import org.mockito.session.MockitoSessionBuilder;
 
+import org.jpatterns.gof.creational.BuilderPattern;
+
 /**
  * {@code MockitoSession} is an optional, highly recommended feature
  * that helps driving cleaner tests by eliminating boilerplate code and adding extra validation.

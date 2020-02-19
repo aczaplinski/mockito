@@ -4,6 +4,7 @@
  */
 package org.mockito.session;
 
+import org.jpatterns.gof.creational.BuilderPattern;
 import org.mockito.Incubating;
 import org.mockito.MockitoAnnotations;
 import org.mockito.MockitoSession;

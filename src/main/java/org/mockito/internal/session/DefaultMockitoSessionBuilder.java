@@ -9,6 +9,7 @@ import static java.util.Collections.emptyList;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.jpatterns.gof.creational.BuilderPattern;
 import org.mockito.MockitoSession;
 import org.mockito.internal.configuration.plugins.Plugins;
 import org.mockito.internal.framework.DefaultMockitoSession;

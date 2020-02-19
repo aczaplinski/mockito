@@ -79,6 +79,7 @@ dependencies {
 
     compileOnly libraries.junit4, libraries.hamcrest, libraries.opentest4j
     compile libraries.objenesis
+    compile files('../jpatterns-fork/target/jpatterns-0.1.0.jar')
 
     testCompile libraries.asm
 
