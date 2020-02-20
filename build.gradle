@@ -79,7 +79,10 @@ dependencies {
 
     compileOnly libraries.junit4, libraries.hamcrest, libraries.opentest4j
     compile libraries.objenesis
-    compile files('../jpatterns-fork/target/jpatterns-0.1.0.jar')
+    ConfigurableFileCollection JPATTERNS_JAR =
+        files('../jpatterns-fork/target/jpatterns-0.1.0.jar')
+    compile JPATTERNS_JAR
+    annotationProcessor JPATTERNS_JAR
 
     testCompile libraries.asm
 
