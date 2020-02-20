@@ -4,6 +4,7 @@
  */
 package org.mockito.listeners;
 
+import org.jpatterns.core.ValidationErrorLevel;
 import org.jpatterns.gof.behavioral.ObserverPattern;
 import org.mockito.mock.MockCreationSettings;
 
@@ -11,7 +12,7 @@ import org.mockito.mock.MockCreationSettings;
  * Notified when mock object is created.
  * For more information on listeners see {@link org.mockito.MockitoFramework#addListener(MockitoListener)}.
  */
-@ObserverPattern.Observer
+@ObserverPattern.Observer(validationErrorLevel = ValidationErrorLevel.ERROR)
 public interface MockCreationListener extends MockitoListener {
 
     /**

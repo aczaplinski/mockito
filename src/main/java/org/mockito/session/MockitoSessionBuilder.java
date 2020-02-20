@@ -4,6 +4,7 @@
  */
 package org.mockito.session;
 
+import org.jpatterns.core.ValidationErrorLevel;
 import org.jpatterns.gof.creational.BuilderPattern;
 import org.mockito.Incubating;
 import org.mockito.MockitoAnnotations;
@@ -18,7 +19,7 @@ import org.mockito.quality.Strictness;
  *
  * @since 2.7.0
  */
-@BuilderPattern.Builder
+@BuilderPattern.Builder(validationErrorLevel = ValidationErrorLevel.ERROR)
 @Incubating
 @NotExtensible
 public interface MockitoSessionBuilder {

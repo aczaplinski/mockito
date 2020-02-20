@@ -8,6 +8,7 @@ import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.jpatterns.core.ValidationErrorLevel;
 import org.jpatterns.gof.behavioral.ObserverPattern;
 import org.junit.runner.Description;
 import org.junit.runner.notification.Failure;
@@ -20,7 +21,7 @@ import org.mockito.mock.MockCreationSettings;
 /**
  * Reports unnecessary stubbings
  */
-@ObserverPattern.ConcreteObserver
+@ObserverPattern.ConcreteObserver(validationErrorLevel = ValidationErrorLevel.ERROR)
 public class UnnecessaryStubbingsReporter implements MockCreationListener {
 
     private List<Object> mocks = new LinkedList<Object>();

@@ -4,11 +4,12 @@
  */
 package org.mockito.internal.session;
 
+import org.jpatterns.core.ValidationErrorLevel;
 import org.jpatterns.gof.structural.AdapterPattern;
 import org.mockito.plugins.MockitoLogger;
 import org.mockito.session.MockitoSessionLogger;
 
-@AdapterPattern.Adapter
+@AdapterPattern.Adapter(validationErrorLevel = ValidationErrorLevel.ERROR)
 class MockitoLoggerAdapter implements MockitoLogger {
 
     private final MockitoSessionLogger logger;

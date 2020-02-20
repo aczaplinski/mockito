@@ -12,6 +12,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
+import org.jpatterns.core.ValidationErrorLevel;
 import org.jpatterns.gof.behavioral.ObserverPattern;
 import org.mockito.internal.configuration.GlobalConfiguration;
 import org.mockito.internal.debugging.Localized;
@@ -27,7 +28,7 @@ import org.mockito.stubbing.OngoingStubbing;
 import org.mockito.verification.VerificationMode;
 import org.mockito.verification.VerificationStrategy;
 
-@ObserverPattern.ConcreteSubject
+@ObserverPattern.ConcreteSubject(validationErrorLevel = ValidationErrorLevel.ERROR)
 @SuppressWarnings("unchecked")
 public class MockingProgressImpl implements MockingProgress {
 

@@ -9,6 +9,7 @@ import static java.util.Collections.emptyList;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.jpatterns.core.ValidationErrorLevel;
 import org.jpatterns.gof.creational.BuilderPattern;
 import org.mockito.MockitoSession;
 import org.mockito.internal.configuration.plugins.Plugins;
@@ -18,7 +19,7 @@ import org.mockito.quality.Strictness;
 import org.mockito.session.MockitoSessionBuilder;
 import org.mockito.session.MockitoSessionLogger;
 
-@BuilderPattern.ConcreteBuilder
+@BuilderPattern.ConcreteBuilder(validationErrorLevel = ValidationErrorLevel.ERROR)
 public class DefaultMockitoSessionBuilder implements MockitoSessionBuilder {
 
     private List<Object> testClassInstances = new ArrayList<Object>();
