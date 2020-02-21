@@ -17,6 +17,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
+import org.jpatterns.core.ValidationErrorLevel;
+import org.jpatterns.gof.behavioral.ChainOfResponsibilityPattern;
+import org.jpatterns.gof.behavioral.StrategyPattern;
 import org.mockito.exceptions.base.MockitoException;
 import org.mockito.internal.configuration.injection.filter.MockCandidateFilter;
 import org.mockito.internal.configuration.injection.filter.NameBasedCandidateFilter;
@@ -60,6 +63,8 @@ import org.mockito.internal.util.reflection.FieldInitializer;
  * to create one using a no-arg constructor of the field type.
  * </p>
  */
+@StrategyPattern.ConcreteStrategy(validationErrorLevel = ValidationErrorLevel.ERROR)
+@ChainOfResponsibilityPattern.ConcreteHandler(validationErrorLevel = ValidationErrorLevel.ERROR)
 public class PropertyAndSetterInjection extends MockInjectionStrategy {
 
     private final MockCandidateFilter mockCandidateFilter =

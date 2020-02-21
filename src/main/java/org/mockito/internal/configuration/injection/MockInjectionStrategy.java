@@ -7,9 +7,15 @@ package org.mockito.internal.configuration.injection;
 import java.lang.reflect.Field;
 import java.util.Set;
 
+import org.jpatterns.core.ValidationErrorLevel;
+import org.jpatterns.gof.behavioral.ChainOfResponsibilityPattern;
+import org.jpatterns.gof.behavioral.StrategyPattern;
+
 /**
  * Injector strategy contract
  */
+@StrategyPattern.Strategy(validationErrorLevel = ValidationErrorLevel.ERROR)
+@ChainOfResponsibilityPattern.Handler(validationErrorLevel = ValidationErrorLevel.ERROR)
 public abstract class MockInjectionStrategy {
 
     /**

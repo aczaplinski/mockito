@@ -12,6 +12,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+import org.jpatterns.core.ValidationErrorLevel;
+import org.jpatterns.gof.behavioral.ChainOfResponsibilityPattern;
+import org.jpatterns.gof.behavioral.StrategyPattern;
 import org.mockito.exceptions.base.MockitoException;
 import org.mockito.internal.util.reflection.FieldInitializationReport;
 import org.mockito.internal.util.reflection.FieldInitializer;
@@ -35,6 +38,8 @@ import org.mockito.internal.util.reflection.FieldInitializer.ConstructorArgument
  * If not possible the algorithm abandon resolution.
  * </p>
  */
+@StrategyPattern.ConcreteStrategy(validationErrorLevel = ValidationErrorLevel.ERROR)
+@ChainOfResponsibilityPattern.ConcreteHandler(validationErrorLevel = ValidationErrorLevel.ERROR)
 public class ConstructorInjection extends MockInjectionStrategy {
 
     public ConstructorInjection() { }

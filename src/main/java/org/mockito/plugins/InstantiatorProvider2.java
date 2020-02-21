@@ -4,6 +4,9 @@
  */
 package org.mockito.plugins;
 
+import org.jpatterns.core.ValidationErrorLevel;
+import org.jpatterns.gof.creational.AbstractFactoryPattern;
+import org.jpatterns.gof.structural.AdapterPattern;
 import org.mockito.creation.instance.Instantiator;
 import org.mockito.mock.MockCreationSettings;
 
@@ -47,6 +50,8 @@ import org.mockito.mock.MockCreationSettings;
  *
  * @since 2.15.4
  */
+@AbstractFactoryPattern.AbstractFactory(validationErrorLevel = ValidationErrorLevel.ERROR)
+@AdapterPattern.Adaptee
 public interface InstantiatorProvider2 {
 
     /**
@@ -54,5 +59,6 @@ public interface InstantiatorProvider2 {
      *
      * @since 2.15.4
      */
+    @AbstractFactoryPattern.FactoryMethod(validationErrorLevel = ValidationErrorLevel.ERROR)
     Instantiator getInstantiator(MockCreationSettings<?> settings);
 }

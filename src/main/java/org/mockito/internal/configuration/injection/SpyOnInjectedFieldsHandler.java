@@ -10,6 +10,9 @@ import static org.mockito.internal.util.reflection.FieldSetter.setField;
 import java.lang.reflect.Field;
 import java.util.Set;
 
+import org.jpatterns.core.ValidationErrorLevel;
+import org.jpatterns.gof.behavioral.ChainOfResponsibilityPattern;
+import org.jpatterns.gof.behavioral.StrategyPattern;
 import org.mockito.Mockito;
 import org.mockito.Spy;
 import org.mockito.exceptions.base.MockitoException;
@@ -24,6 +27,8 @@ import org.mockito.internal.util.reflection.FieldReader;
  * So if the field is still null, then nothing will happen there.
  * </p>
  */
+@StrategyPattern.ConcreteStrategy(validationErrorLevel = ValidationErrorLevel.ERROR)
+@ChainOfResponsibilityPattern.ConcreteHandler(validationErrorLevel = ValidationErrorLevel.ERROR)
 public class SpyOnInjectedFieldsHandler extends MockInjectionStrategy {
 
     @Override

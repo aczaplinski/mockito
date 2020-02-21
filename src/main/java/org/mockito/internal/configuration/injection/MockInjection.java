@@ -13,6 +13,9 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.jpatterns.core.ValidationErrorLevel;
+import org.jpatterns.gof.behavioral.StrategyPattern;
+
 /**
  * Internal injection configuration utility.
  *
@@ -50,11 +53,14 @@ public class MockInjection {
     /**
      * Ongoing configuration of the mock injector.
      */
+    @StrategyPattern.Context(validationErrorLevel = ValidationErrorLevel.ERROR)
     public static class OngoingMockInjection {
         private final Set<Field> fields = new HashSet<Field>();
         private final Set<Object> mocks = newMockSafeHashSet();
         private final Object fieldOwner;
+        @StrategyPattern.StrategyField(validationErrorLevel = ValidationErrorLevel.ERROR)
         private final MockInjectionStrategy injectionStrategies = MockInjectionStrategy.nop();
+        @StrategyPattern.StrategyField(validationErrorLevel = ValidationErrorLevel.ERROR)
         private final MockInjectionStrategy postInjectionStrategies = MockInjectionStrategy.nop();
 
         private OngoingMockInjection(Field field, Object fieldOwner) {

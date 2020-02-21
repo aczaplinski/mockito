@@ -4,6 +4,9 @@
  */
 package org.mockito.plugins;
 
+import org.jpatterns.core.ValidationErrorLevel;
+import org.jpatterns.gof.creational.AbstractFactoryPattern;
+import org.jpatterns.gof.structural.AdapterPattern;
 import org.mockito.internal.creation.instance.Instantiator;
 import org.mockito.mock.MockCreationSettings;
 
@@ -58,6 +61,8 @@ import org.mockito.mock.MockCreationSettings;
  *
  * @since 2.0.31
  */
+@AbstractFactoryPattern.AbstractFactory(validationErrorLevel = ValidationErrorLevel.ERROR)
+@AdapterPattern.Adaptee
 @Deprecated
 public interface InstantiatorProvider {
 
@@ -66,6 +71,7 @@ public interface InstantiatorProvider {
      *
      * Returns an instantiator, used to create new class instances.
      */
+    @AbstractFactoryPattern.FactoryMethod(validationErrorLevel = ValidationErrorLevel.ERROR)
     @Deprecated
     Instantiator getInstantiator(MockCreationSettings<?> settings);
 }

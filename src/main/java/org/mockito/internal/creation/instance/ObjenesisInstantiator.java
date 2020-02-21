@@ -4,10 +4,13 @@
  */
 package org.mockito.internal.creation.instance;
 
+import org.jpatterns.core.ValidationErrorLevel;
+import org.jpatterns.gof.creational.AbstractFactoryPattern;
 import org.mockito.creation.instance.Instantiator;
 import org.mockito.internal.configuration.GlobalConfiguration;
 import org.objenesis.ObjenesisStd;
 
+@AbstractFactoryPattern.ConcreteFactory(validationErrorLevel = ValidationErrorLevel.ERROR)
 class ObjenesisInstantiator implements Instantiator {
 
     //TODO: in order to provide decent exception message when objenesis is not found,
@@ -15,6 +18,7 @@ class ObjenesisInstantiator implements Instantiator {
     //TODO: for the same reason catch and give better feedback when hamcrest core is not found.
     private final ObjenesisStd objenesis = new ObjenesisStd(new GlobalConfiguration().enableClassCache());
 
+    @AbstractFactoryPattern.FactoryMethod(validationErrorLevel = ValidationErrorLevel.NONE)
     public <T> T newInstance(Class<T> cls) {
         return objenesis.newInstance(cls);
     }

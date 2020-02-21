@@ -4,6 +4,9 @@
  */
 package org.mockito.internal.creation.instance;
 
+import org.jpatterns.core.ValidationErrorLevel;
+import org.jpatterns.gof.creational.AbstractFactoryPattern;
+import org.jpatterns.gof.structural.AdapterPattern;
 import org.mockito.creation.instance.InstantiationException;
 import org.mockito.creation.instance.Instantiator;
 import org.mockito.mock.MockCreationSettings;
@@ -13,6 +16,8 @@ import org.mockito.plugins.InstantiatorProvider2;
 /**
  * Adapts old, deprecated {@link InstantiatorProvider} onto a new public {@link InstantiatorProvider2} API.
  */
+@AbstractFactoryPattern.ConcreteFactory(validationErrorLevel = ValidationErrorLevel.ERROR)
+@AdapterPattern.Adapter(validationErrorLevel = ValidationErrorLevel.ERROR)
 public class InstantiatorProviderAdapter implements InstantiatorProvider2 {
     private final InstantiatorProvider provider;
 
@@ -20,6 +25,7 @@ public class InstantiatorProviderAdapter implements InstantiatorProvider2 {
         this.provider = provider;
     }
 
+    @AbstractFactoryPattern.FactoryMethod(validationErrorLevel = ValidationErrorLevel.ERROR)
     @Override
     public Instantiator getInstantiator(final MockCreationSettings<?> settings) {
         return new Instantiator() {

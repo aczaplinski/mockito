@@ -12,11 +12,14 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.jpatterns.core.ValidationErrorLevel;
+import org.jpatterns.gof.creational.AbstractFactoryPattern;
 import org.mockito.creation.instance.InstantiationException;
 import org.mockito.creation.instance.Instantiator;
 import org.mockito.internal.util.Primitives;
 import org.mockito.internal.util.reflection.AccessibilityChanger;
 
+@AbstractFactoryPattern.ConcreteFactory(validationErrorLevel = ValidationErrorLevel.ERROR)
 public class ConstructorInstantiator implements Instantiator {
 
     /**
@@ -32,6 +35,7 @@ public class ConstructorInstantiator implements Instantiator {
         this.constructorArgs = constructorArgs;
     }
 
+    @AbstractFactoryPattern.FactoryMethod(validationErrorLevel = ValidationErrorLevel.NONE)
     public <T> T newInstance(Class<T> cls) {
         return withParams(cls, constructorArgs);
     }

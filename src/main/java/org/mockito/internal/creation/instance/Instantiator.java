@@ -4,6 +4,9 @@
  */
 package org.mockito.internal.creation.instance;
 
+import org.jpatterns.core.ValidationErrorLevel;
+import org.jpatterns.gof.creational.AbstractFactoryPattern;
+
 /**
  * @deprecated since 2.15.4 because this internal class was leaking from the public API.
  * For more information why deprecated, see {@link org.mockito.plugins.InstantiatorProvider2}.
@@ -11,12 +14,15 @@ package org.mockito.internal.creation.instance;
  * <p>
  * Provides instances of classes.
  */
+@AbstractFactoryPattern.AbstractFactory(validationErrorLevel = ValidationErrorLevel.ERROR)
+@AbstractFactoryPattern.AbstractProduct(validationErrorLevel = ValidationErrorLevel.ERROR)
 @Deprecated
 public interface Instantiator {
 
     /**
      * Creates instance of given class
      */
+    @AbstractFactoryPattern.FactoryMethod(validationErrorLevel = ValidationErrorLevel.NONE)
     <T> T newInstance(Class<T> cls) throws InstantiationException;
 
 }
