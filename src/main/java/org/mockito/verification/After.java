@@ -4,6 +4,8 @@
  */
 package org.mockito.verification;
 
+import org.jpatterns.core.ValidationErrorLevel;
+import org.jpatterns.gof.structural.DecoratorPattern;
 import org.mockito.internal.verification.VerificationOverTimeImpl;
 import org.mockito.internal.verification.VerificationWrapper;
 
@@ -13,6 +15,7 @@ import org.mockito.internal.verification.VerificationWrapper;
  * Typically, you won't use this class explicitly. Instead use timeout() method on Mockito class.
  * See javadoc for {@link VerificationWithTimeout}
  */
+@DecoratorPattern.ConcreteDecorator(validationErrorLevel = ValidationErrorLevel.NONE) //TODO change to ERROR when JPatterns adds support for this type of implementation
 public class After extends VerificationWrapper<VerificationOverTimeImpl> implements VerificationAfterDelay {
 
     /**

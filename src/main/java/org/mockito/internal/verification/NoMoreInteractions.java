@@ -11,12 +11,15 @@ import static org.mockito.internal.invocation.InvocationsFinder.findFirstUnverif
 
 import java.util.List;
 
+import org.jpatterns.core.ValidationErrorLevel;
+import org.jpatterns.gof.structural.DecoratorPattern;
 import org.mockito.internal.verification.api.VerificationData;
 import org.mockito.internal.verification.api.VerificationDataInOrder;
 import org.mockito.internal.verification.api.VerificationInOrderMode;
 import org.mockito.invocation.Invocation;
 import org.mockito.verification.VerificationMode;
 
+@DecoratorPattern.ConcreteComponent(validationErrorLevel = ValidationErrorLevel.ERROR)
 public class NoMoreInteractions implements VerificationMode, VerificationInOrderMode {
 
     @SuppressWarnings("unchecked")

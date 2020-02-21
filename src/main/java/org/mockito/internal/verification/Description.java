@@ -4,6 +4,8 @@
  */
 package org.mockito.internal.verification;
 
+import org.jpatterns.core.ValidationErrorLevel;
+import org.jpatterns.gof.structural.DecoratorPattern;
 import org.mockito.exceptions.base.MockitoAssertionError;
 import org.mockito.internal.verification.api.VerificationData;
 import org.mockito.verification.VerificationMode;
@@ -14,6 +16,7 @@ import org.mockito.verification.VerificationMode;
  * @author Geoff.Schoeman
  * @since 2.1.0
  */
+@DecoratorPattern.ConcreteDecorator(validationErrorLevel = ValidationErrorLevel.NONE)
 public class Description implements VerificationMode {
 
     private final VerificationMode verification;

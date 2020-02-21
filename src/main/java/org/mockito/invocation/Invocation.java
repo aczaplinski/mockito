@@ -6,6 +6,7 @@ package org.mockito.invocation;
 
 import java.util.List;
 
+import org.jpatterns.gof.creational.BuilderPattern;
 import org.mockito.ArgumentMatcher;
 import org.mockito.NotExtensible;
 
@@ -22,6 +23,7 @@ import org.mockito.NotExtensible;
  *
  * @since 1.9.5
  */
+@BuilderPattern.Product
 @NotExtensible
 public interface Invocation extends InvocationOnMock, DescribedInvocation {
 

@@ -6,6 +6,8 @@ package org.mockito.verification;
 
 import static org.mockito.internal.exceptions.Reporter.atMostAndNeverShouldNotBeUsedWithTimeout;
 
+import org.jpatterns.core.ValidationErrorLevel;
+import org.jpatterns.gof.structural.DecoratorPattern;
 import org.mockito.internal.util.Timer;
 import org.mockito.internal.verification.VerificationOverTimeImpl;
 import org.mockito.internal.verification.VerificationWrapper;
@@ -16,6 +18,7 @@ import org.mockito.internal.verification.VerificationWrapper;
  * Typically, you won't use this class explicitly. Instead use timeout() method on Mockito class.
  * See javadoc for {@link VerificationWithTimeout}
  */
+@DecoratorPattern.ConcreteDecorator(validationErrorLevel = ValidationErrorLevel.NONE) // TODO change to ERROR when JPatterns adds support for this type of implementation
 public class Timeout extends VerificationWrapper<VerificationOverTimeImpl> implements VerificationWithTimeout {
 
     /**

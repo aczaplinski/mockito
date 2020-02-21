@@ -4,8 +4,11 @@
  */
 package org.mockito.internal.verification;
 
+import org.jpatterns.core.ValidationErrorLevel;
+import org.jpatterns.gof.creational.FactoryMethodPattern;
 import org.mockito.verification.VerificationMode;
 
+@FactoryMethodPattern.ConcreteCreator(validationErrorLevel = ValidationErrorLevel.NONE)
 public class VerificationModeFactory {
 
     public static VerificationMode atLeastOnce() {

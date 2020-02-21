@@ -9,6 +9,8 @@ import static org.mockito.internal.verification.checkers.NumberOfInvocationsChec
 
 import java.util.List;
 
+import org.jpatterns.core.ValidationErrorLevel;
+import org.jpatterns.gof.structural.DecoratorPattern;
 import org.mockito.exceptions.base.MockitoException;
 import org.mockito.internal.verification.api.VerificationData;
 import org.mockito.internal.verification.api.VerificationDataInOrder;
@@ -17,6 +19,7 @@ import org.mockito.invocation.Invocation;
 import org.mockito.invocation.MatchableInvocation;
 import org.mockito.verification.VerificationMode;
 
+@DecoratorPattern.ConcreteComponent(validationErrorLevel = ValidationErrorLevel.ERROR)
 public class Calls implements VerificationMode, VerificationInOrderMode {
 
     final int wantedCount;

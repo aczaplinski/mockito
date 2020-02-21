@@ -4,9 +4,12 @@
  */
 package org.mockito.internal.verification;
 
+import org.jpatterns.core.ValidationErrorLevel;
+import org.jpatterns.gof.structural.DecoratorPattern;
 import org.mockito.internal.verification.api.VerificationData;
 import org.mockito.verification.VerificationMode;
 
+@DecoratorPattern.Decorator(validationErrorLevel = ValidationErrorLevel.ERROR)
 public abstract class VerificationWrapper<WrapperType extends VerificationMode> implements VerificationMode {
 
     protected final WrapperType wrappedVerification;

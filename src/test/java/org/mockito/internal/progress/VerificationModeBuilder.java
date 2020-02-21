@@ -5,9 +5,12 @@
 package org.mockito.internal.progress;
 
 
+import org.jpatterns.core.ValidationErrorLevel;
+import org.jpatterns.gof.creational.BuilderPattern;
 import org.mockito.internal.verification.Times;
 import org.mockito.internal.verification.VerificationModeFactory;
 
+@BuilderPattern.ConcreteBuilder(validationErrorLevel = ValidationErrorLevel.NONE)
 public class VerificationModeBuilder {
 
     private Integer times = 1;

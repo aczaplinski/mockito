@@ -12,11 +12,14 @@ import static org.mockito.internal.invocation.InvocationsFinder.findInvocations;
 
 import java.util.List;
 
+import org.jpatterns.core.ValidationErrorLevel;
+import org.jpatterns.gof.structural.DecoratorPattern;
 import org.mockito.internal.verification.api.VerificationData;
 import org.mockito.invocation.Invocation;
 import org.mockito.invocation.MatchableInvocation;
 import org.mockito.verification.VerificationMode;
 
+@DecoratorPattern.ConcreteComponent(validationErrorLevel = ValidationErrorLevel.ERROR)
 public class Only implements VerificationMode {
 
     @SuppressWarnings("unchecked")

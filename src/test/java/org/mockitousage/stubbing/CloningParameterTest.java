@@ -5,7 +5,6 @@
 package org.mockitousage.stubbing;
 
 import static org.junit.Assert.assertNotNull;
-import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.*;
 
 import java.util.List;

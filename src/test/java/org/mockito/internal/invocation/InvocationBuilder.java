@@ -12,6 +12,8 @@ import java.lang.reflect.Method;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.jpatterns.core.ValidationErrorLevel;
+import org.jpatterns.gof.creational.BuilderPattern;
 import org.mockito.Mockito;
 import org.mockito.internal.debugging.LocationImpl;
 import org.mockito.internal.invocation.mockref.MockReference;
@@ -23,6 +25,7 @@ import org.mockitousage.IMethods;
 /**
  * Build an invocation.
  */
+@BuilderPattern.ConcreteBuilder(validationErrorLevel = ValidationErrorLevel.NONE)
 @SuppressWarnings("unchecked")
 public class InvocationBuilder {
 

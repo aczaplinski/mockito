@@ -8,10 +8,13 @@ import static org.mockito.internal.exceptions.Reporter.noInteractionsWanted;
 
 import java.util.List;
 
+import org.jpatterns.core.ValidationErrorLevel;
+import org.jpatterns.gof.structural.DecoratorPattern;
 import org.mockito.internal.verification.api.VerificationData;
 import org.mockito.invocation.Invocation;
 import org.mockito.verification.VerificationMode;
 
+@DecoratorPattern.ConcreteComponent(validationErrorLevel = ValidationErrorLevel.ERROR)
 public class NoInteractions implements VerificationMode {
 
     @SuppressWarnings("unchecked")

@@ -7,6 +7,10 @@ package org.mockito.exceptions.base;
 import java.util.Arrays;
 import java.util.List;
 
+import org.jpatterns.core.ValidationErrorLevel;
+import org.jpatterns.gof.creational.BuilderPattern;
+
+@BuilderPattern.ConcreteBuilder(validationErrorLevel = ValidationErrorLevel.NONE)
 public class StackTraceBuilder {
 
     private String[] methods;

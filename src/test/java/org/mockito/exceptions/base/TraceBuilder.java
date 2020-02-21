@@ -8,6 +8,10 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.jpatterns.core.ValidationErrorLevel;
+import org.jpatterns.gof.creational.BuilderPattern;
+
+@BuilderPattern.ConcreteBuilder(validationErrorLevel = ValidationErrorLevel.NONE)
 public class TraceBuilder {
 
     private String[] methods = {};
