@@ -8,6 +8,8 @@ import static org.mockito.internal.exceptions.Reporter.invocationListenerThrewEx
 
 import java.util.List;
 
+import org.jpatterns.core.ValidationErrorLevel;
+import org.jpatterns.gof.behavioral.ChainOfResponsibilityPattern;
 import org.mockito.invocation.Invocation;
 import org.mockito.invocation.InvocationContainer;
 import org.mockito.invocation.MockHandler;
@@ -18,6 +20,7 @@ import org.mockito.mock.MockCreationSettings;
  * Handler, that call all listeners wanted for this mock, before delegating it
  * to the parameterized handler.
  */
+@ChainOfResponsibilityPattern.ConcreteHandler(validationErrorLevel = ValidationErrorLevel.ERROR)
 class InvocationNotifierHandler<T> implements MockHandler<T> {
 
     private final List<InvocationListener> invocationListeners;

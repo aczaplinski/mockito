@@ -6,6 +6,8 @@ package org.mockito.internal.handler;
 
 import static org.mockito.internal.util.Primitives.defaultValue;
 
+import org.jpatterns.core.ValidationErrorLevel;
+import org.jpatterns.gof.behavioral.ChainOfResponsibilityPattern;
 import org.mockito.invocation.Invocation;
 import org.mockito.invocation.InvocationContainer;
 import org.mockito.invocation.MockHandler;
@@ -16,6 +18,7 @@ import org.mockito.mock.MockCreationSettings;
  *
  * by Szczepan Faber, created at: 5/22/12
  */
+@ChainOfResponsibilityPattern.ConcreteHandler(validationErrorLevel = ValidationErrorLevel.ERROR)
 class NullResultGuardian<T> implements MockHandler<T> {
 
     private final MockHandler<T> delegate;

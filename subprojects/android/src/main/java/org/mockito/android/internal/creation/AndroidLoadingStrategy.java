@@ -6,6 +6,8 @@ package org.mockito.android.internal.creation;
 
 import net.bytebuddy.android.AndroidClassLoadingStrategy;
 import net.bytebuddy.dynamic.loading.ClassLoadingStrategy;
+import org.jpatterns.core.ValidationErrorLevel;
+import org.jpatterns.gof.behavioral.StrategyPattern;
 import org.mockito.exceptions.base.MockitoException;
 import org.mockito.internal.creation.bytebuddy.SubclassLoader;
 
@@ -13,6 +15,7 @@ import java.io.File;
 
 import static org.mockito.internal.util.StringUtil.join;
 
+@StrategyPattern.ConcreteStrategy(validationErrorLevel = ValidationErrorLevel.ERROR)
 class AndroidLoadingStrategy implements SubclassLoader {
 
     @Override

@@ -5,10 +5,13 @@
 package org.mockito.internal.creation.bytebuddy;
 
 import net.bytebuddy.dynamic.loading.ClassLoadingStrategy;
+import org.jpatterns.core.ValidationErrorLevel;
+import org.jpatterns.gof.behavioral.StrategyPattern;
 
 /**
  * A subclass loader is responsible for resolving a class loading strategy for a mock that is implemented as a subclass.
  */
+@StrategyPattern.Strategy(validationErrorLevel = ValidationErrorLevel.ERROR)
 public interface SubclassLoader {
 
     /**

@@ -7,6 +7,8 @@ package org.mockito.internal.handler;
 import static org.mockito.internal.listeners.StubbingLookupNotifier.notifyStubbedAnswerLookup;
 import static org.mockito.internal.progress.ThreadSafeMockingProgress.mockingProgress;
 
+import org.jpatterns.core.ValidationErrorLevel;
+import org.jpatterns.gof.behavioral.ChainOfResponsibilityPattern;
 import org.mockito.internal.creation.settings.CreationSettings;
 import org.mockito.internal.invocation.InvocationMatcher;
 import org.mockito.internal.invocation.MatchersBinder;
@@ -27,6 +29,7 @@ import org.mockito.verification.VerificationMode;
  *
  * @param <T> type of mock object to handle
  */
+@ChainOfResponsibilityPattern.ConcreteHandler(defaultHandler = true, validationErrorLevel = ValidationErrorLevel.ERROR)
 public class MockHandlerImpl<T> implements MockHandler<T> {
 
     private static final long serialVersionUID = -2917871070982574165L;

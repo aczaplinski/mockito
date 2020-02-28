@@ -35,16 +35,20 @@ import net.bytebuddy.implementation.FieldAccessor;
 import net.bytebuddy.implementation.Implementation;
 import net.bytebuddy.implementation.attribute.MethodAttributeAppender;
 import net.bytebuddy.matcher.ElementMatcher;
+import org.jpatterns.core.ValidationErrorLevel;
+import org.jpatterns.gof.behavioral.StrategyPattern;
 import org.mockito.codegen.InjectionBase;
 import org.mockito.exceptions.base.MockitoException;
 import org.mockito.internal.creation.bytebuddy.ByteBuddyCrossClassLoaderSerializationSupport.CrossClassLoaderSerializableMock;
 import org.mockito.internal.creation.bytebuddy.MockMethodInterceptor.DispatcherDefaultingToRealMethod;
 import org.mockito.mock.SerializableMode;
 
+@StrategyPattern.Context(validationErrorLevel = ValidationErrorLevel.ERROR)
 class SubclassBytecodeGenerator implements BytecodeGenerator {
 
     private static final String CODEGEN_PACKAGE = "org.mockito.codegen.";
 
+    @StrategyPattern.StrategyField(validationErrorLevel = ValidationErrorLevel.ERROR)
     private final SubclassLoader loader;
     private final ModuleHandler handler;
     private final ByteBuddy byteBuddy;

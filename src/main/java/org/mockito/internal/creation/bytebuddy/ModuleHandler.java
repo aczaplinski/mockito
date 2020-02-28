@@ -18,6 +18,8 @@ import net.bytebuddy.dynamic.scaffold.subclass.ConstructorStrategy;
 import net.bytebuddy.implementation.Implementation;
 import net.bytebuddy.implementation.MethodCall;
 import net.bytebuddy.implementation.StubMethod;
+import org.jpatterns.core.ValidationErrorLevel;
+import org.jpatterns.gof.behavioral.StrategyPattern;
 import org.mockito.codegen.InjectionBase;
 import org.mockito.exceptions.base.MockitoException;
 
@@ -45,9 +47,11 @@ abstract class ModuleHandler {
         }
     }
 
+    @StrategyPattern.Context(validationErrorLevel = ValidationErrorLevel.ERROR)
     private static class ModuleSystemFound extends ModuleHandler {
 
         private final ByteBuddy byteBuddy;
+        @StrategyPattern.StrategyField(validationErrorLevel = ValidationErrorLevel.ERROR)
         private final SubclassLoader loader;
         private final Random random;
 

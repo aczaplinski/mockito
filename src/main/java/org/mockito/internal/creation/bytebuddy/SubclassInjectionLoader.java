@@ -11,10 +11,14 @@ import java.lang.reflect.Method;
 
 import net.bytebuddy.dynamic.loading.ClassInjector;
 import net.bytebuddy.dynamic.loading.ClassLoadingStrategy;
+import org.jpatterns.core.ValidationErrorLevel;
+import org.jpatterns.gof.behavioral.StrategyPattern;
 import org.mockito.codegen.InjectionBase;
 import org.mockito.exceptions.base.MockitoException;
 import org.mockito.internal.util.Platform;
 
+@StrategyPattern.ConcreteStrategy(validationErrorLevel = ValidationErrorLevel.ERROR)
+@StrategyPattern.Context(validationErrorLevel = ValidationErrorLevel.ERROR)
 class SubclassInjectionLoader implements SubclassLoader {
 
     private static final String ERROR_MESSAGE = join("The current JVM does not support any class injection mechanism.",
@@ -22,6 +26,7 @@ class SubclassInjectionLoader implements SubclassLoader {
         "Currently, Mockito supports injection via neither by method handle lookups or using sun.misc.Unsafe",
         "Neither seems to be available on your current JVM.");
 
+    @StrategyPattern.StrategyField(validationErrorLevel = ValidationErrorLevel.ERROR)
     private final SubclassLoader loader;
 
     SubclassInjectionLoader() {
@@ -46,6 +51,7 @@ class SubclassInjectionLoader implements SubclassLoader {
         }
     }
 
+    @StrategyPattern.ConcreteStrategy(validationErrorLevel = ValidationErrorLevel.ERROR)
     private static class WithReflection implements SubclassLoader {
 
         @Override
@@ -59,6 +65,7 @@ class SubclassInjectionLoader implements SubclassLoader {
         }
     }
 
+    @StrategyPattern.ConcreteStrategy(validationErrorLevel = ValidationErrorLevel.ERROR)
     private static class WithLookup implements SubclassLoader {
 
         private final Object lookup;
