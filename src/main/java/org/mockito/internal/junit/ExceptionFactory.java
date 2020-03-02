@@ -4,17 +4,24 @@
  */
 package org.mockito.internal.junit;
 
+import org.jpatterns.core.ValidationErrorLevel;
+import org.jpatterns.gof.behavioral.StrategyPattern;
+import org.jpatterns.gof.creational.AbstractFactoryPattern;
 import org.mockito.exceptions.verification.ArgumentsAreDifferent;
 
+@AbstractFactoryPattern.ConcreteFactory(validationErrorLevel = ValidationErrorLevel.NONE)
+@StrategyPattern.Context(validationErrorLevel = ValidationErrorLevel.ERROR)
 public class ExceptionFactory {
 
     private ExceptionFactory() {
     }
 
+    @StrategyPattern.Strategy(validationErrorLevel = ValidationErrorLevel.ERROR)
     private static interface ExceptionFactoryImpl {
         AssertionError create(String message, String wanted, String actual);
     }
 
+    @StrategyPattern.StrategyField(validationErrorLevel = ValidationErrorLevel.ERROR)
     private final static ExceptionFactoryImpl factory;
 
     static {
@@ -42,6 +49,7 @@ public class ExceptionFactory {
      * it returns an instance of
      * {@link org.mockito.exceptions.verification.ArgumentsAreDifferent}.
      */
+    @AbstractFactoryPattern.FactoryMethod(validationErrorLevel = ValidationErrorLevel.NONE)
     public static AssertionError createArgumentsAreDifferentException(String message, String wanted, String actual) {
         return factory.create(message, wanted, actual);
     }

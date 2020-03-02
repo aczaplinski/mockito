@@ -5,7 +5,7 @@
 package org.mockito.verification;
 
 import org.jpatterns.core.ValidationErrorLevel;
-import org.jpatterns.gof.creational.AbstractFactoryPattern;
+import org.jpatterns.gof.creational.FactoryMethodPattern;
 import org.jpatterns.gof.structural.DecoratorPattern;
 import org.mockito.Mockito;
 import org.mockito.internal.verification.VerificationModeFactory;
@@ -32,7 +32,7 @@ import org.mockito.internal.verification.api.VerificationData;
  * <p>
  * See examples in javadoc for {@link Mockito#verify(Object, VerificationMode)}
  */
-@AbstractFactoryPattern.AbstractProduct(validationErrorLevel = ValidationErrorLevel.ERROR)
+@FactoryMethodPattern.Product(validationErrorLevel = ValidationErrorLevel.ERROR)
 @DecoratorPattern.Component(validationErrorLevel = ValidationErrorLevel.ERROR)
 public interface VerificationMode {
 

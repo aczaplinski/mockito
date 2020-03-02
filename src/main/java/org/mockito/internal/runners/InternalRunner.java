@@ -4,6 +4,8 @@
  */
 package org.mockito.internal.runners;
 
+import org.jpatterns.core.ValidationErrorLevel;
+import org.jpatterns.gof.creational.FactoryMethodPattern;
 import org.junit.runner.Description;
 import org.junit.runner.manipulation.Filterable;
 import org.junit.runner.notification.RunNotifier;
@@ -12,6 +14,7 @@ import org.junit.runner.notification.RunNotifier;
  * I'm using this surrogate interface to hide internal Runner implementations.
  * Surrogate cannot be used with &#064;RunWith therefore it is less likely clients will use interal runners.
  */
+@FactoryMethodPattern.Product(validationErrorLevel = ValidationErrorLevel.ERROR)
 public interface InternalRunner extends Filterable {
 
     void run(RunNotifier notifier);

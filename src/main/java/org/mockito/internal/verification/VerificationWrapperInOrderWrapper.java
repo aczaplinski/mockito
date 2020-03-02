@@ -4,12 +4,15 @@
  */
 package org.mockito.internal.verification;
 
+import org.jpatterns.core.ValidationErrorLevel;
+import org.jpatterns.gof.structural.DecoratorPattern;
 import org.mockito.exceptions.base.MockitoException;
 import org.mockito.internal.InOrderImpl;
 import org.mockito.internal.verification.api.VerificationData;
 import org.mockito.internal.verification.api.VerificationInOrderMode;
 import org.mockito.verification.VerificationMode;
 
+@DecoratorPattern.ConcreteDecorator(validationErrorLevel = ValidationErrorLevel.NONE)
 public class VerificationWrapperInOrderWrapper implements VerificationMode {
     private final VerificationMode delegate;
 

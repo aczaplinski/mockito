@@ -6,7 +6,9 @@ package org.mockito.invocation;
 
 import java.util.List;
 
+import org.jpatterns.core.ValidationErrorLevel;
 import org.jpatterns.gof.creational.BuilderPattern;
+import org.jpatterns.gof.creational.FactoryMethodPattern;
 import org.mockito.ArgumentMatcher;
 import org.mockito.NotExtensible;
 
@@ -24,6 +26,7 @@ import org.mockito.NotExtensible;
  * @since 1.9.5
  */
 @BuilderPattern.Product
+@FactoryMethodPattern.Product(validationErrorLevel = ValidationErrorLevel.ERROR)
 @NotExtensible
 public interface Invocation extends InvocationOnMock, DescribedInvocation {
 

@@ -8,6 +8,8 @@ import static org.mockito.internal.runners.util.TestMethodsFinder.hasTestMethods
 
 import java.lang.reflect.InvocationTargetException;
 
+import org.jpatterns.core.ValidationErrorLevel;
+import org.jpatterns.gof.creational.FactoryMethodPattern;
 import org.mockito.exceptions.base.MockitoException;
 import org.mockito.internal.configuration.plugins.Plugins;
 import org.mockito.internal.junit.MismatchReportingTestListener;
@@ -20,6 +22,7 @@ import org.mockito.internal.util.Supplier;
 /**
  * Creates instances of Mockito JUnit Runner in a safe way, e.g. detecting inadequate version of JUnit, etc.
  */
+@FactoryMethodPattern.ConcreteCreator(validationErrorLevel = ValidationErrorLevel.NONE)
 public class RunnerFactory {
 
     /**

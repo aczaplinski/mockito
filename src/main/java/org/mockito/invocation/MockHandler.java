@@ -8,6 +8,7 @@ import java.io.Serializable;
 
 import org.jpatterns.core.ValidationErrorLevel;
 import org.jpatterns.gof.behavioral.ChainOfResponsibilityPattern;
+import org.jpatterns.gof.creational.FactoryMethodPattern;
 import org.mockito.Incubating;
 import org.mockito.MockSettings;
 import org.mockito.mock.MockCreationSettings;
@@ -25,6 +26,7 @@ import org.mockito.mock.MockCreationSettings;
  * {@link org.mockito.plugins.MockMaker#getHandler(Object)}.
  */
 @ChainOfResponsibilityPattern.Handler(validationErrorLevel = ValidationErrorLevel.ERROR)
+@FactoryMethodPattern.Product(validationErrorLevel = ValidationErrorLevel.ERROR)
 public interface MockHandler<T> extends Serializable {
 
     /**

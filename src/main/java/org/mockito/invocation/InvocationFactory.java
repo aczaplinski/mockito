@@ -8,6 +8,8 @@ import java.io.Serializable;
 import java.lang.reflect.Method;
 import java.util.concurrent.Callable;
 
+import org.jpatterns.core.ValidationErrorLevel;
+import org.jpatterns.gof.creational.FactoryMethodPattern;
 import org.mockito.Incubating;
 import org.mockito.MockitoFramework;
 import org.mockito.mock.MockCreationSettings;
@@ -24,6 +26,7 @@ import org.mockito.mock.MockCreationSettings;
  *
  * @since 2.10.0
  */
+@FactoryMethodPattern.Creator(validationErrorLevel = ValidationErrorLevel.ERROR)
 @Incubating
 public interface InvocationFactory {
 

@@ -7,6 +7,8 @@ package org.mockito.internal.invocation;
 import java.lang.reflect.Method;
 import java.util.concurrent.Callable;
 
+import org.jpatterns.core.ValidationErrorLevel;
+import org.jpatterns.gof.creational.FactoryMethodPattern;
 import org.mockito.internal.creation.DelegatingMethod;
 import org.mockito.internal.debugging.LocationImpl;
 import org.mockito.internal.invocation.mockref.MockWeakReference;
@@ -16,6 +18,7 @@ import org.mockito.invocation.InvocationFactory;
 import org.mockito.invocation.Location;
 import org.mockito.mock.MockCreationSettings;
 
+@FactoryMethodPattern.ConcreteCreator(validationErrorLevel = ValidationErrorLevel.ERROR)
 public class DefaultInvocationFactory implements InvocationFactory {
 
     public Invocation createInvocation(Object target, MockCreationSettings settings, Method method, final Callable realMethod, Object... args) {
