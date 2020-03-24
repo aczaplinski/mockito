@@ -28,7 +28,7 @@ import org.mockito.stubbing.OngoingStubbing;
 import org.mockito.verification.VerificationMode;
 import org.mockito.verification.VerificationStrategy;
 
-@ObserverPattern.ConcreteSubject(validationErrorLevel = ValidationErrorLevel.ERROR)
+@ObserverPattern.ConcreteSubject(validationErrorLevel = ValidationErrorLevel.NONE)
 @SuppressWarnings("unchecked")
 public class MockingProgressImpl implements MockingProgress {
 

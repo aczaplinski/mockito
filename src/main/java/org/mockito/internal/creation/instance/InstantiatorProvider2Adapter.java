@@ -27,7 +27,7 @@ public class InstantiatorProvider2Adapter implements InstantiatorProvider {
     @Override
     public Instantiator getInstantiator(final MockCreationSettings<?> settings) {
         return new Instantiator() {
-            @AbstractFactoryPattern.FactoryMethod(validationErrorLevel = ValidationErrorLevel.NONE)
+            @AbstractFactoryPattern.FactoryMethod(validationErrorLevel = ValidationErrorLevel.ERROR)
             @Override
             public <T> T newInstance(Class<T> cls) throws InstantiationException {
                 try {
